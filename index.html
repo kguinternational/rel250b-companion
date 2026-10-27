@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>REL 250 B: 7-Week Gathering & AI Policy Announcement</title>
+  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+  <style>
+    /* Global high-contrast typography overrides */
+    * {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.3rem 0.8rem;
+      border-radius: 9999px;
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+    
+    .hero-title-shadow {
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+    }
+    
+    /* Theme definitions */
+    .theme-navy .hero-bg {
+      background: linear-gradient(135deg, #061224 0%, #1e3a8a 50%, #0f172a 100%);
+      border-color: #3b82f6;
+    }
+    .theme-navy .accent-pill {
+      background: #020617;
+      color: #ffffff;
+      border: 2px solid #f59e0b;
+    }
+    .theme-navy .tab-active {
+      background-color: #1e3a8a !important;
+      color: #ffffff !important;
+      border-bottom: 4px solid #60a5fa !important;
+    }
+
+    .theme-earth .hero-bg {
+      background: linear-gradient(180deg, #2b1811 0%, #381f15 50%, #46271c 100%);
+      border-color: #c98a4b;
+    }
+    .theme-earth .accent-pill {
+      background: #1a0f0b;
+      color: #ffffff;
+      border: 2px solid #e6bd86;
+    }
+    .theme-earth .tab-active {
+      background-color: #381f15 !important;
+      color: #ffffff !important;
+      border-bottom: 4px solid #e6bd86 !important;
+    }
+
+    .theme-emerald .hero-bg {
+      background: linear-gradient(135deg, #022c22 0%, #065f46 50%, #022c22 100%);
+      border-color: #10b981;
+    }
+    .theme-emerald .accent-pill {
+      background: #021a14;
+      color: #ffffff;
+      border: 2px solid #34d399;
+    }
+    .theme-emerald .tab-active {
+      background-color: #065f46 !important;
+      color: #ffffff !important;
+      border-bottom: 4px solid #34d399 !important;
+    }
+
+    /* Force dark, bold readable text in light-surface cards */
+    .card-dark-text {
+      color: #0f172a !important;
+    }
+    .card-heading-dark {
+      color: #020617 !important;
+      font-weight: 900 !important;
+    }
+    .card-body-dark {
+      color: #1e293b !important;
+      font-weight: 600 !important;
+    }
+  </style>
+</head>
+<body class="bg-[#f8fafc] text-[#0f172a] antialiased p-3 sm:p-5 selection:bg-blue-600 selection:text-white">
+
+  <!-- Main Announcement Card (Default: theme-navy) -->
+  <div id="announcement-card" class="theme-navy max-w-4xl mx-auto bg-white text-[#0f172a] border-2 border-slate-300 rounded-3xl shadow-2xl overflow-hidden transition-all duration-300">
+    
+    <!-- Top South African Flag Accent Bar -->
+    <div class="h-2 bg-gradient-to-r from-[#007a3d] via-[#ffb612] via-[#de3831] via-[#002395] to-[#007a3d]"></div>
+
+    <!-- Theme Palette Selector Bar -->
+    <div class="bg-slate-100 px-4 py-2.5 border-b border-slate-300 flex flex-wrap items-center justify-between gap-2 text-xs">
+      <div class="flex items-center gap-1.5 font-black text-slate-900">
+        <span>🎨</span>
+        <span>Color Theme:</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <button onclick="setTheme('navy')" id="btn-theme-navy" class="px-3.5 py-1.5 rounded-full text-xs font-black bg-blue-900 text-white border-2 border-blue-400 shadow-sm transition">
+          🔷 Classic BYU Navy
+        </button>
+        <button onclick="setTheme('earth')" id="btn-theme-earth" class="px-3.5 py-1.5 rounded-full text-xs font-black bg-[#381f15] text-[#f7d6a5] border-2 border-[#c98a4b] hover:opacity-90 transition">
+          🍂 Warm Earth & Gold
+        </button>
+        <button onclick="setTheme('emerald')" id="btn-theme-emerald" class="px-3.5 py-1.5 rounded-full text-xs font-black bg-[#064e3b] text-[#a7f3d0] border-2 border-[#10b981] hover:opacity-90 transition">
+          🌿 Mzansi Emerald
+        </button>
+      </div>
+    </div>
+
+    <!-- Hero Header -->
+    <header class="hero-bg relative p-6 sm:p-8 text-white border-b-2 transition-all duration-300">
+      <div class="flex flex-wrap items-center justify-between gap-4">
+        <div class="space-y-2">
+          
+          <!-- High-Contrast Top Tag with Pure White Text on Black Pill -->
+          <div class="accent-pill inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-wider shadow-lg">
+            <span class="text-amber-400 text-sm">✨</span>
+            <span class="text-white">REL 250 B • 7-Week Block Term</span>
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span class="text-slate-300">BYU-Pathway Worldwide</span>
+          </div>
+
+          <h1 class="hero-title-shadow text-2xl sm:text-3xl font-black tracking-tight text-white flex items-center gap-2">
+            Come Join Our Circle Around the Savior! ✨
+          </h1>
+          <p class="text-sm sm:text-base text-blue-100 font-bold max-w-2xl">
+            Jesus Christ &amp; His Everlasting Gospel • Guided by Sister Mary Ackerman &amp; Sister Dawn Louise Blue
+          </p>
+        </div>
+
+        <!-- 45-Minute Notice Card (High Contrast Solid Black Card with Gold Border) -->
+        <div class="flex items-center gap-3 bg-black px-4 py-3 rounded-2xl border-2 border-amber-400 text-xs text-white shadow-xl">
+          <div class="text-right">
+            <div class="font-black text-amber-300 uppercase tracking-wider text-xs">Wednesday Gatherings</div>
+            <div class="text-white font-extrabold text-sm">Only <span class="bg-amber-400 text-slate-950 px-2 py-0.5 rounded font-black">45 Minutes</span> on Zoom</div>
+          </div>
+          <span class="text-3xl">⏰</span>
+        </div>
+      </div>
+
+      <!-- Quick Metrics Grid with Solid High-Contrast Cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-6">
+        
+        <!-- Box 1 -->
+        <div class="bg-black/85 border-2 border-blue-400 rounded-2xl p-3.5 flex items-center gap-3 shadow-lg">
+          <div class="w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center text-xl shrink-0 font-black shadow">⏱️</div>
+          <div>
+            <div class="text-xs text-blue-200 uppercase tracking-wider font-black">Gathering Duration</div>
+            <div class="text-sm font-black text-white">45 Minutes Focused</div>
+          </div>
+        </div>
+
+        <!-- Box 2 -->
+        <div class="bg-black/85 border-2 border-emerald-400 rounded-2xl p-3.5 flex items-center gap-3 shadow-lg">
+          <div class="w-10 h-10 rounded-xl bg-emerald-600 text-white flex items-center justify-center text-xl shrink-0 font-black shadow">🗓️</div>
+          <div>
+            <div class="text-xs text-emerald-200 uppercase tracking-wider font-black">7-Week Block Term</div>
+            <div class="text-sm font-black text-white">75% Attendance (6 of 7)</div>
+          </div>
+        </div>
+
+        <!-- Box 3 -->
+        <div class="bg-black/85 border-2 border-amber-400 rounded-2xl p-3.5 flex items-center gap-3 shadow-lg">
+          <div class="w-10 h-10 rounded-xl bg-amber-500 text-slate-950 flex items-center justify-center text-xl shrink-0 font-black shadow">🕊️</div>
+          <div>
+            <div class="text-xs text-amber-200 uppercase tracking-wider font-black">Sacred AI Policy</div>
+            <div class="text-sm font-black text-white">Study Aid • Heartfelt Voice</div>
+          </div>
+        </div>
+
+      </div>
+    </header>
+
+    <!-- Live Gathering Countdown Bar (Ticks Live Every Second) -->
+    <div class="bg-slate-950 border-b-2 border-slate-700 px-4 py-3.5 sm:px-6 shadow-md">
+      <div class="max-w-2xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
+        <div>
+          <div class="inline-flex items-center gap-2 text-xs font-black uppercase tracking-wider text-amber-400">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping"></span>
+            <span>Live Gathering Countdown</span>
+          </div>
+          <div class="text-xs sm:text-sm font-bold text-slate-200 mt-0.5">
+            Every Wednesday at 6:00 PM SAST (Zoom opens at 5:45 PM)
+          </div>
+        </div>
+
+        <!-- 4 Live Ticking Digit Blocks -->
+        <div class="flex items-center gap-1.5 sm:gap-2" id="live-countdown-container">
+          <div class="flex flex-col items-center bg-[#091426] border-2 border-blue-400 rounded-xl px-2.5 py-1 min-w-[54px] shadow-inner">
+            <span id="cd-live-days" class="text-xl sm:text-2xl font-black text-white font-mono">--</span>
+            <span class="text-[9px] uppercase font-bold text-blue-300">Days</span>
+          </div>
+          <span class="text-lg font-black text-amber-400 animate-pulse">:</span>
+          <div class="flex flex-col items-center bg-[#091426] border-2 border-blue-400 rounded-xl px-2.5 py-1 min-w-[54px] shadow-inner">
+            <span id="cd-live-hours" class="text-xl sm:text-2xl font-black text-white font-mono">--</span>
+            <span class="text-[9px] uppercase font-bold text-blue-300">Hours</span>
+          </div>
+          <span class="text-lg font-black text-amber-400 animate-pulse">:</span>
+          <div class="flex flex-col items-center bg-[#091426] border-2 border-blue-400 rounded-xl px-2.5 py-1 min-w-[54px] shadow-inner">
+            <span id="cd-live-mins" class="text-xl sm:text-2xl font-black text-white font-mono">--</span>
+            <span class="text-[9px] uppercase font-bold text-blue-300">Mins</span>
+          </div>
+          <span class="text-lg font-black text-amber-400 animate-pulse">:</span>
+          <div class="flex flex-col items-center bg-[#091426] border-2 border-amber-400 rounded-xl px-2.5 py-1 min-w-[54px] shadow-inner">
+            <span id="cd-live-secs" class="text-xl sm:text-2xl font-black text-amber-300 font-mono">--</span>
+            <span class="text-[9px] uppercase font-bold text-amber-300">Secs</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation Tabs with Full Wrapping (Never Clipped) -->
+    <nav class="flex flex-wrap border-b-2 border-slate-300 bg-slate-100 px-4 pt-2.5 gap-2">
+      <button onclick="switchTab('welcome')" id="tab-welcome" class="tab-btn tab-active px-4 py-3 rounded-t-xl text-xs sm:text-sm font-black transition-colors flex items-center gap-1.5 whitespace-nowrap">
+        <span>🤍</span> Welcome Home
+      </button>
+      <button onclick="switchTab('attendance')" id="tab-attendance" class="tab-btn px-4 py-3 rounded-t-xl text-xs sm:text-sm font-bold text-slate-700 hover:text-black transition-colors flex items-center gap-1.5 whitespace-nowrap">
+        <span>⏰</span> 45-Min Gathering Policy
+      </button>
+      <button onclick="switchTab('ai-policy')" id="tab-ai-policy" class="tab-btn px-4 py-3 rounded-t-xl text-xs sm:text-sm font-bold text-slate-700 hover:text-black transition-colors flex items-center gap-1.5 whitespace-nowrap">
+        <span>🤖</span> AI & Gospel Integrity
+      </button>
+      <button onclick="switchTab('scenarios')" id="tab-scenarios" class="tab-btn px-4 py-3 rounded-t-xl text-xs sm:text-sm font-bold text-slate-700 hover:text-black transition-colors flex items-center gap-1.5 whitespace-nowrap">
+        <span>🎮</span> 7-Week Scenarios
+      </button>
+      <button onclick="switchTab('circle')" id="tab-circle" class="tab-btn px-4 py-3 rounded-t-xl text-xs sm:text-sm font-bold text-slate-700 hover:text-black transition-colors flex items-center gap-1.5 whitespace-nowrap">
+        <span>💬</span> WhatsApp Circle & Pledge
+      </button>
+    </nav>
+
+    <!-- Main Content Panels -->
+    <main class="p-5 sm:p-7 space-y-6">
+
+      <!-- TAB 1: WELCOME HOME -->
+      <section id="panel-welcome" class="space-y-6">
+        
+        <!-- Card 1: Gathered Close Around Jesus (High-contrast rich blue theme) -->
+        <div class="bg-blue-50 p-5 sm:p-6 rounded-2xl border-2 border-blue-400 shadow-sm">
+          <div class="flex flex-col sm:flex-row items-center sm:items-start gap-4 text-center sm:text-left">
+            <span class="text-4xl">🔥💛✨</span>
+            <div>
+              <h2 class="text-xl font-black text-blue-950">
+                Gathered Close Around Jesus
+              </h2>
+              <p class="text-sm text-slate-900 mt-2 leading-relaxed font-semibold">
+                <strong class="text-blue-900">“For where two or three are gathered together in my name, there am I in the midst of them.”</strong> (Matthew 18:20)<br>
+                In REL 250 B, you are never watching from a distance. You are sitting side-by-side with us at the Savior’s feet, surrounded by the warmth of His voice and the love of your South African brothers and sisters of every background.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Ubuntu & Belonging Card (Deep black text, solid navy border) -->
+        <div class="p-5 rounded-2xl border-l-8 border-l-blue-800 border-2 border-slate-300 bg-white space-y-2 shadow-sm">
+          <h3 class="font-black text-base text-slate-950 flex items-center gap-2">
+            <span>🇿🇦</span> The Spirit of Ubuntu — "All Are Alike Unto God"
+          </h3>
+          <p class="text-sm text-slate-900 leading-relaxed font-semibold">
+            <strong class="text-blue-900">“He inviteth them all to come unto him and partake of his goodness; and he denieth none that come unto him, black and white, bond and free, male and female... and all are alike unto God.”</strong> (2 Nephi 26:33).<br>
+            Whether dialing in from Soweto, Sandton, Cape Town, Durban, Pretoria, Gqeberha, Polokwane, or Bloemfontein—you belong completely in our circle!
+          </p>
+        </div>
+
+        <!-- Card 3: Grace for Real Life (SOLID DARK AMBER TEXT, HIGH CONTRAST BORDER) -->
+        <div class="p-5 rounded-2xl border-2 border-amber-600 bg-amber-50 space-y-2 shadow-sm">
+          <div class="flex items-center gap-2">
+            <span class="text-2xl">🕯️</span>
+            <h3 class="font-black text-base text-amber-950 uppercase tracking-wide">
+              No Pressure, No Stress — Full Grace for Real Life!
+            </h3>
+          </div>
+          <p class="text-sm text-amber-950 leading-relaxed font-bold">
+            Facing load-shedding? Internet acting up? Children laughing in the background? <strong class="bg-amber-200 text-amber-950 px-1 py-0.5 rounded">Please don't worry for a second!</strong> Bring your real, faithful self just as you are. Just let Sister Ackerman and Sister Blue know via WhatsApp or email, and we will support you with all our hearts!
+          </p>
+        </div>
+      </section>
+
+      <!-- TAB 2: 45-MINUTE GATHERING POLICY -->
+      <section id="panel-attendance" class="hidden space-y-6">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-2 border-b-2 border-slate-300">
+          <div>
+            <h2 class="text-lg font-black text-slate-950 flex items-center gap-2">
+              <span>⏰</span> Official 7-Week Gathering Attendance Policy
+            </h2>
+            <p class="text-sm text-slate-700 font-bold">
+              Every Wednesday • Exactly <strong>45 Minutes</strong> on Zoom • 75% Attendance Required
+            </p>
+          </div>
+          <span class="badge bg-blue-900 text-white border-2 border-blue-400">45 Minutes Only</span>
+        </div>
+
+        <!-- Core Policy Pillars with Solid High-Contrast Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div class="p-4 rounded-xl border-2 border-slate-300 bg-white space-y-2 shadow-sm">
+            <div class="text-2xl">⏱️</div>
+            <h3 class="font-black text-sm text-slate-950">45-Minute Focused Class</h3>
+            <p class="text-xs text-slate-800 leading-relaxed font-semibold">
+              We know your time and data are precious. Class is only <strong>45 minutes</strong> once a week on Wednesday. Arrive 5 minutes early so we start and end promptly!
+            </p>
+          </div>
+          <div class="p-4 rounded-xl border-2 border-slate-300 bg-white space-y-2 shadow-sm">
+            <div class="text-2xl">🗓️</div>
+            <h3 class="font-black text-sm text-slate-950">7-Week Block = 7 Gatherings</h3>
+            <p class="text-xs text-slate-800 leading-relaxed font-semibold">
+              There are only 7 gatherings in this entire block term. Under Institute/Pathway cornerstone policy, you must attend <strong>at least 75%</strong> (at least 6 of 7) to earn credit.
+            </p>
+          </div>
+          <div class="p-4 rounded-xl border-2 border-slate-300 bg-white space-y-2 shadow-sm">
+            <div class="text-2xl">📱</div>
+            <h3 class="font-black text-sm text-slate-950">Notify Us for Load-Shedding</h3>
+            <p class="text-xs text-slate-800 leading-relaxed font-semibold">
+              If power outages or network drops hit your area on Wednesday, send a quick message in our WhatsApp family group to let us know.
+            </p>
+          </div>
+        </div>
+
+        <!-- 7-Week Interactive Attendance Calculator -->
+        <div class="p-5 rounded-2xl border-2 border-blue-500 bg-white space-y-4 shadow-md">
+          <div class="flex items-center justify-between">
+            <h3 class="font-black text-sm text-slate-950 flex items-center gap-2">
+              <span>📊</span> REL 250 B 7-Week Attendance Calculator (45-Min Sessions)
+            </h3>
+            <span class="px-3 py-1 rounded-md bg-blue-100 text-blue-950 text-xs font-black border-2 border-blue-400">
+              Required: 75% (6 of 7)
+            </span>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 items-center bg-slate-50 p-4 rounded-xl border-2 border-slate-300">
+            <div>
+              <label class="block text-xs font-black text-slate-900 mb-1">Total Term Gatherings (7 Weeks)</label>
+              <input type="number" id="calc-total" value="7" readonly class="w-full bg-slate-200 border-2 border-slate-400 rounded-lg px-3 py-1.5 text-xs font-black text-slate-700 cursor-not-allowed">
+              <span class="text-[11px] text-slate-600 font-bold">Fixed: 1 gathering per week for 7 weeks</span>
+
+              <label class="block text-xs font-black text-slate-900 mt-3 mb-1">Wednesday Gatherings You Attended (0 - 7)</label>
+              <input type="number" id="calc-attended" value="7" min="0" max="7" class="w-full bg-white border-2 border-blue-600 rounded-lg px-3 py-1.5 text-xs font-black text-slate-900" oninput="updateAttendanceCalc()">
+            </div>
+
+            <div class="flex flex-col items-center justify-center p-4 rounded-xl bg-white border-2 border-slate-300 text-center shadow-sm">
+              <div id="calc-rate-label" class="text-3xl font-black text-emerald-700">100%</div>
+              <div id="calc-status-badge" class="badge mt-2 bg-emerald-700 text-white font-black shadow-sm">Credit Secured (7 of 7)</div>
+              <p id="calc-advice" class="text-xs text-slate-700 font-bold mt-2">Perfect attendance! Full 45-minute gathering credit secured.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 3: AI & GOSPEL INTEGRITY -->
+      <section id="panel-ai-policy" class="hidden space-y-6">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-2 border-b-2 border-slate-300">
+          <div>
+            <h2 class="text-lg font-black text-slate-950 flex items-center gap-2">
+              <span>🤖</span> Artificial Intelligence Policy in Sacred Gospel Study
+            </h2>
+            <p class="text-sm text-slate-700 font-bold">
+              BYU-Pathway Academic Honesty Policy &amp; The CES Honor Code
+            </p>
+          </div>
+          <span class="badge bg-emerald-700 text-white border-2 border-emerald-400">Honor Code Aligned</span>
+        </div>
+
+        <div class="p-4 rounded-xl border-2 border-slate-300 bg-white space-y-2">
+          <div class="font-black text-xs uppercase tracking-wide text-slate-950 flex items-center gap-2">
+            <span>⚖️</span> Official Classification
+          </div>
+          <p class="text-sm text-slate-800 leading-relaxed font-semibold">
+            BYU-Pathway Worldwide's <strong>Academic Honesty Policy</strong> explicitly classifies the <strong>"misuse of generative or artificial intelligence"</strong> as academic misconduct (alongside plagiarism and cheating).
+            In REL 250 B, our sacred focus is your authentic relationship with the Lord Jesus Christ.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <!-- Permitted -->
+          <div class="rounded-xl border-2 border-emerald-600 bg-emerald-50 p-4 space-y-3">
+            <div class="flex items-center gap-2 text-emerald-950 font-black text-sm">
+              <span class="w-3.5 h-3.5 rounded-full bg-emerald-600"></span>
+              <span>Permissible Study Aid (When Syllabus Permits)</span>
+            </div>
+            <ul class="text-xs text-emerald-950 space-y-2.5 list-disc list-inside font-bold">
+              <li><strong>Scripture Cross-Referencing:</strong> Searching for parallel scriptures on the Bread of Life, the Atonement, or the Resurrection.</li>
+              <li><strong>Historical & Cultural Context:</strong> Looking up ancient customs, geography of Galilee/Jerusalem, or Hebrew/Greek word roots.</li>
+              <li><strong>Study Outlining:</strong> Organizing study points before writing your own reflection.</li>
+            </ul>
+          </div>
+
+          <!-- Prohibited -->
+          <div class="rounded-xl border-2 border-red-600 bg-red-50 p-4 space-y-3">
+            <div class="flex items-center gap-2 text-red-950 font-black text-sm">
+              <span class="w-3.5 h-3.5 rounded-full bg-red-600"></span>
+              <span>Prohibited Misuse (Honor Code Breach)</span>
+            </div>
+            <ul class="text-xs text-red-950 space-y-2.5 list-disc list-inside font-bold">
+              <li><strong>Automated Spiritual Testimony:</strong> Using AI to write your personal testimony, spiritual ponderings, or scripture journals.</li>
+              <li><strong>Canvas Discussion Automation:</strong> Copying and pasting AI-generated text into weekly class discussion boards.</li>
+              <li><strong>Bypassing Scripture Reading:</strong> Relying on AI summaries instead of reading the word of God directly.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Focus on Student Learning Box -->
+        <div class="p-4 rounded-xl border-2 border-amber-600 bg-amber-50 space-y-1">
+          <h4 class="font-black text-xs uppercase tracking-wide text-amber-950 flex items-center gap-1.5">
+            <span>📖</span> Purpose of Course Assignments
+          </h4>
+          <p class="text-xs text-amber-950 leading-relaxed font-bold">
+            The assignments in REL 250 B are designed to assess each student's individual learning, personal perspective, and direct study of the assigned scriptures. Please ensure all reflections and discussion posts reflect your own authentic work.
+          </p>
+        </div>
+      </section>
+
+      <!-- TAB 4: SCENARIOS -->
+      <section id="panel-scenarios" class="hidden space-y-6">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-2 border-b-2 border-slate-300">
+          <div>
+            <h2 class="text-lg font-black text-slate-950 flex items-center gap-2">
+              <span>🎮</span> REL 250 B 7-Week Scenario Challenge
+            </h2>
+            <p class="text-sm text-slate-700 font-bold">
+              Check your understanding of our 45-minute gathering and AI policies.
+            </p>
+          </div>
+          <span id="quiz-score-badge" class="badge bg-indigo-800 text-white font-black">Score: 0 / 4</span>
+        </div>
+
+        <!-- Scenario 1 -->
+        <div class="p-4 rounded-xl border-2 border-slate-300 bg-white space-y-3 shadow-sm">
+          <div class="flex items-center justify-between">
+            <span class="px-2.5 py-1 rounded bg-blue-100 text-blue-950 text-xs font-black border border-blue-400">
+              Scenario 1: Gathering Length & Time
+            </span>
+            <span id="s1-status" class="badge bg-slate-100 text-slate-700 border border-slate-300">Unanswered</span>
+          </div>
+          <p class="text-sm text-slate-900 font-bold">
+            <strong>Situation:</strong> Thabo thinks our Wednesday gathering lasts 90 minutes and worries his mobile data bundle won't last. What is the actual gathering length for REL 250 B?
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+            <button onclick="answerScenario(1, true, 'Spot on! Our Wednesday gathering is only 45 minutes long, designed to be focused, high-impact, and low-data friendly.')" class="p-3 text-left font-bold rounded-lg border-2 border-slate-300 hover:bg-slate-100 hover:border-blue-600 transition text-slate-900">
+              A) Exactly 45 minutes! It is intentionally focused and respects your time and data.
+            </button>
+            <button onclick="answerScenario(1, false, 'Incorrect: REL 250 B gatherings are only 45 minutes, not 90 minutes.')" class="p-3 text-left font-bold rounded-lg border-2 border-slate-300 hover:bg-slate-100 hover:border-blue-600 transition text-slate-900">
+              B) 90 minutes minimum each week.
+            </button>
+          </div>
+          <div id="s1-feedback" class="hidden text-xs p-3 rounded-lg font-black"></div>
+        </div>
+
+        <!-- Scenario 2: Load-Shedding with High Contrast Container -->
+        <div class="p-4 rounded-xl border-2 border-slate-300 bg-white space-y-3 shadow-sm">
+          <div class="flex items-center justify-between">
+            <span class="px-2.5 py-1 rounded bg-amber-100 text-amber-950 text-xs font-black border-2 border-amber-500">
+              Scenario 2: Load-Shedding & Absences
+            </span>
+            <span id="s2-status" class="badge bg-slate-100 text-slate-700 border border-slate-300">Unanswered</span>
+          </div>
+          <p class="text-sm text-slate-900 font-bold">
+            <strong>Situation:</strong> Sipho experiences Stage 4 load-shedding right as Wednesday class begins, knocking out cell towers in his neighborhood. What should he do?
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+            <button onclick="answerScenario(2, false, 'No! Sister Ackerman and Sister Blue have full grace for real life. Never drop a course due to sudden load-shedding.')" class="p-3 text-left font-bold rounded-lg border-2 border-slate-300 hover:bg-slate-100 hover:border-amber-600 transition text-slate-900">
+              A) Drop out of the course immediately.
+            </button>
+            <button onclick="answerScenario(2, true, 'Exactly right! Message Sister Ackerman & Sister Blue on WhatsApp as soon as power returns. Full grace is extended for genuine power/connectivity issues!')" class="p-3 text-left font-bold rounded-lg border-2 border-slate-300 hover:bg-slate-100 hover:border-amber-600 transition text-slate-900">
+              B) Send a message on the WhatsApp family group or email as soon as connectivity returns to communicate with Sister Ackerman & Sister Blue.
+            </button>
+          </div>
+          <div id="s2-feedback" class="hidden text-xs p-3 rounded-lg font-black"></div>
+        </div>
+
+        <!-- Scenario 3 -->
+        <div class="p-4 rounded-xl border-2 border-slate-300 bg-white space-y-3 shadow-sm">
+          <div class="flex items-center justify-between">
+            <span class="px-2.5 py-1 rounded bg-emerald-100 text-emerald-950 text-xs font-black border-2 border-emerald-500">
+              Scenario 3: 75% Attendance Standard
+            </span>
+            <span id="s3-status" class="badge bg-slate-100 text-slate-700 border border-slate-300">Unanswered</span>
+          </div>
+          <p class="text-sm text-slate-900 font-bold">
+            <strong>Situation:</strong> How many of the 7 weekly gatherings must you attend to meet the required 75% threshold for course credit in this 7-week block?
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+            <button onclick="answerScenario(3, true, 'Correct! Attending 6 out of 7 is 86%, satisfying the 75% requirement. Attending only 5 drops you to 71%, which is below the threshold.')" class="p-3 text-left font-bold rounded-lg border-2 border-slate-300 hover:bg-slate-100 hover:border-emerald-600 transition text-slate-900">
+              A) At least 6 out of the 7 gatherings (86%). Missing 2 drops you below 75%.
+            </button>
+            <button onclick="answerScenario(3, false, 'Incorrect: 4 gatherings is only 57%, which fails the mandatory 75% threshold.')" class="p-3 text-left font-bold rounded-lg border-2 border-slate-300 hover:bg-slate-100 hover:border-emerald-600 transition text-slate-900">
+              B) Only 4 gatherings are required.
+            </button>
+          </div>
+          <div id="s3-feedback" class="hidden text-xs p-3 rounded-lg font-black"></div>
+        </div>
+
+        <!-- Scenario 4 -->
+        <div class="p-4 rounded-xl border-2 border-slate-300 bg-white space-y-3 shadow-sm">
+          <div class="flex items-center justify-between">
+            <span class="px-2.5 py-1 rounded bg-red-100 text-red-950 text-xs font-black border-2 border-red-500">
+              Scenario 4: AI & Discussion Board
+            </span>
+            <span id="s4-status" class="badge bg-slate-100 text-slate-700 border border-slate-300">Unanswered</span>
+          </div>
+          <p class="text-sm text-slate-900 font-bold">
+            <strong>Situation:</strong> Nomsa generates an AI reflection on the Bread of Life sermon and posts it word-for-word in the Canvas discussion. Is this allowed?
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+            <button onclick="answerScenario(4, false, 'Incorrect: Submitting AI-generated text as your own thoughts is academic misconduct under the Academic Honesty Policy.')" class="p-3 text-left font-bold rounded-lg border-2 border-slate-300 hover:bg-slate-100 hover:border-red-600 transition text-slate-900">
+              A) Yes, because AI can explain doctrine quickly.
+            </button>
+            <button onclick="answerScenario(4, true, 'Right! Academic Honesty requires submitting your own authentic reflections. AI misuse in discussion posts violates the CES Honor Code.')" class="p-3 text-left font-bold rounded-lg border-2 border-slate-300 hover:bg-slate-100 hover:border-red-600 transition text-slate-900">
+              B) No. Submitting AI-authored reflections violates the Academic Honesty Policy. The Lord wants Nomsa\'s authentic heart and thoughts.
+            </button>
+          </div>
+          <div id="s4-feedback" class="hidden text-xs p-3 rounded-lg font-black"></div>
+        </div>
+      </section>
+
+      <!-- TAB 5: WHATSAPP CIRCLE & PLEDGE -->
+      <section id="panel-circle" class="hidden space-y-6">
+        
+        <!-- WhatsApp Banner -->
+        <div class="text-center bg-emerald-50 border-2 border-[#25D366] rounded-3xl p-6 sm:p-8 space-y-4 shadow-md">
+          <span class="inline-block bg-[#1e4a29] text-white text-xs font-black px-4 py-1.5 rounded-full border border-emerald-400 shadow-sm">
+            🇿🇦 Low-Data • Always Connected
+          </span>
+          <h3 class="text-xl sm:text-2xl font-black text-[#1e4a29]">
+            Join Our South Africa WhatsApp Family Circle!
+          </h3>
+          <p class="text-sm text-[#1e4a29] font-bold max-w-lg mx-auto">
+            Get friendly 1-hour reminders before Wednesday class, load-shedding updates, scripture encouragement, and direct access to Sister Ackerman &amp; Sister Blue.
+          </p>
+          <div>
+            <a href="https://chat.whatsapp.com/LeJuLWDMAZT8mrqVvP5m6V?s=cl&p=i&mlu=4&ilr=4&iam=2" target="_blank" class="inline-flex items-center gap-2 bg-gradient-to-r from-[#25D366] to-[#128C7E] text-white font-black text-sm sm:text-base px-7 py-3.5 rounded-full shadow-lg hover:opacity-95 transition border-2 border-white">
+              <span>💬</span> Tap to Join Our WhatsApp Group
+            </a>
+          </div>
+        </div>
+
+        <!-- Disciple Commitment -->
+        <div class="p-5 rounded-2xl border-2 border-slate-300 bg-white space-y-4 shadow-sm">
+          <h3 class="font-black text-base text-slate-950 flex items-center gap-2">
+            <span>📜</span> My REL 250 B 7-Week Disciple Commitment
+          </h3>
+
+          <div class="space-y-3">
+            <label class="flex items-start gap-3 p-3 rounded-xl border-2 border-slate-300 bg-slate-50 cursor-pointer hover:border-blue-600 transition">
+              <input type="checkbox" id="check-gather" class="mt-0.5 rounded text-blue-600" onchange="checkPledge()">
+              <span class="text-xs sm:text-sm text-slate-900 font-bold">
+                <strong>45-Minute Wednesday Gatherings:</strong> I commit to attending all 7 weekly gatherings (only 45 minutes each), knowing 75% attendance (at least 6 of 7) is required for credit.
+              </span>
+            </label>
+
+            <label class="flex items-start gap-3 p-3 rounded-xl border-2 border-slate-300 bg-slate-50 cursor-pointer hover:border-blue-600 transition">
+              <input type="checkbox" id="check-voice" class="mt-0.5 rounded text-blue-600" onchange="checkPledge()">
+              <span class="text-xs sm:text-sm text-slate-900 font-bold">
+                <strong>Authentic Personal Witness:</strong> I will never submit AI-generated text as my own personal testimony or discussion post.
+              </span>
+            </label>
+
+            <label class="flex items-start gap-3 p-3 rounded-xl border-2 border-slate-300 bg-slate-50 cursor-pointer hover:border-blue-600 transition">
+              <input type="checkbox" id="check-loadshedding" class="mt-0.5 rounded text-blue-600" onchange="checkPledge()">
+              <span class="text-xs sm:text-sm text-slate-900 font-bold">
+                <strong>Proactive Communication:</strong> If hit by load-shedding or network trouble, I will message Sister Ackerman &amp; Sister Blue on WhatsApp as soon as possible.
+              </span>
+            </label>
+          </div>
+
+          <div id="pledge-complete-card" class="hidden p-4 rounded-xl bg-emerald-600 text-white text-xs sm:text-sm font-black shadow-md">
+            🌟 Commitment Sealed! We are thrilled to walk these 7 weeks with you in REL 250 B!
+          </div>
+        </div>
+
+        <!-- Instructor Announcement Copy Box -->
+        <div class="p-4 rounded-xl border-2 border-slate-300 bg-slate-50 space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-black text-slate-950 flex items-center gap-1.5">
+              <span>📋</span> Canvas / WhatsApp Announcement Text
+            </span>
+            <button onclick="copyAnnouncement()" id="copy-btn" class="px-3.5 py-1.5 rounded-lg bg-blue-800 text-white text-xs font-black hover:bg-blue-900 transition shadow">
+              Copy Text
+            </button>
+          </div>
+          <p class="text-xs text-slate-700 font-bold">
+            Click above to copy the customized REL 250 B announcement text to post in Canvas or your WhatsApp group!
+          </p>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="p-4 bg-slate-900 text-white border-t-2 border-slate-700 flex flex-wrap items-center justify-between text-xs gap-2">
+      <div class="font-black text-white">REL 250 B • Sister Mary Ackerman &amp; Sister Dawn Louise Blue</div>
+      <div class="flex items-center gap-4 text-slate-200 font-bold">
+        <span>Wednesday Gatherings (45 Min)</span>
+        <span>•</span>
+        <span>75% Attendance (6 of 7)</span>
+        <span>•</span>
+        <span>Saints United in Christ 🇿🇦</span>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Inline Script for Interactivity -->
+  <script>
+    function setTheme(theme) {
+      const card = document.getElementById('announcement-card');
+      card.className = card.className.replace(/theme-\w+/g, '') + ' theme-' + theme;
+      
+      const themes = ['navy', 'earth', 'emerald'];
+      themes.forEach(t => {
+        const btn = document.getElementById('btn-theme-' + t);
+        if (t === theme) {
+          btn.classList.add('ring-2', 'ring-offset-2', 'ring-slate-900', 'opacity-100');
+        } else {
+          btn.classList.remove('ring-2', 'ring-offset-2', 'ring-slate-900');
+        }
+      });
+    }
+
+    function switchTab(tabName) {
+      const tabs = ['welcome', 'attendance', 'ai-policy', 'scenarios', 'circle'];
+      tabs.forEach(t => {
+        const btn = document.getElementById('tab-' + t);
+        const panel = document.getElementById('panel-' + t);
+        if (t === tabName) {
+          btn.classList.add('tab-active');
+          btn.classList.remove('text-slate-700');
+          panel.classList.remove('hidden');
+        } else {
+          btn.classList.remove('tab-active');
+          btn.classList.add('text-slate-700');
+          panel.classList.add('hidden');
+        }
+      });
+    }
+
+    function updateAttendanceCalc() {
+      const total = 7;
+      let attended = parseInt(document.getElementById('calc-attended').value);
+      if (isNaN(attended)) attended = 0;
+      if (attended > 7) attended = 7;
+      if (attended < 0) attended = 0;
+      document.getElementById('calc-attended').value = attended;
+
+      const rate = Math.round((attended / total) * 100);
+      
+      const label = document.getElementById('calc-rate-label');
+      const badge = document.getElementById('calc-status-badge');
+      const advice = document.getElementById('calc-advice');
+
+      label.innerText = rate + '%';
+
+      if (attended >= 6) {
+        label.className = "text-3xl font-black text-emerald-700";
+        badge.className = "badge mt-2 bg-emerald-700 text-white font-black";
+        badge.innerText = `Credit Secured (${attended}/7 Gatherings)`;
+        advice.innerText = attended === 7 ? "Perfect attendance! All 7 weekly 45-minute gatherings attended." : "Meets the 75% requirement. Great job staying on track!";
+      } else if (attended === 5) {
+        label.className = "text-3xl font-black text-amber-700";
+        badge.className = "badge mt-2 bg-amber-600 text-white font-black";
+        badge.innerText = `Below 75% Threshold: 71% (5/7)`;
+        advice.innerText = "Warning: 5/7 is 71%, which is below the 75% requirement. Message Sister Ackerman & Sister Blue on WhatsApp!";
+      } else {
+        label.className = "text-3xl font-black text-red-700";
+        badge.className = "badge mt-2 bg-red-600 text-white font-black";
+        badge.innerText = `At Severe Risk: ${rate}% (${attended}/7)`;
+        advice.innerText = "Crucial: Excessive absences in a 7-week block will result in loss of course credit. Please connect with us immediately!";
+      }
+    }
+
+    let score = 0;
+    const answered = { 1: false, 2: false, 3: false, 4: false };
+
+    function answerScenario(num, isCorrect, explanation) {
+      const feedback = document.getElementById('s' + num + '-feedback');
+      const status = document.getElementById('s' + num + '-status');
+
+      feedback.classList.remove('hidden');
+      if (isCorrect) {
+        feedback.className = "text-xs p-3 rounded-lg bg-emerald-700 text-white font-black mt-2 shadow-sm";
+        feedback.innerHTML = "<strong>✅ Correct:</strong> " + explanation;
+        status.className = "badge bg-emerald-700 text-white font-black";
+        status.innerText = "Passed";
+        if (!answered[num]) {
+          score++;
+          answered[num] = true;
+        }
+      } else {
+        feedback.className = "text-xs p-3 rounded-lg bg-red-700 text-white font-black mt-2 shadow-sm";
+        feedback.innerHTML = "<strong>❌ Incorrect:</strong> " + explanation;
+        status.className = "badge bg-red-700 text-white font-black";
+        status.innerText = "Review";
+      }
+
+      document.getElementById('quiz-score-badge').innerText = `Score: ${score} / 4`;
+    }
+
+    function checkPledge() {
+      const g = document.getElementById('check-gather').checked;
+      const v = document.getElementById('check-voice').checked;
+      const l = document.getElementById('check-loadshedding').checked;
+      const card = document.getElementById('pledge-complete-card');
+      if (g && v && l) {
+        card.classList.remove('hidden');
+      } else {
+        card.classList.add('hidden');
+      }
+    }
+
+    function copyAnnouncement() {
+      const text = `📢 **Welcome to REL 250 B: Jesus Christ and His Everlasting Gospel!**\\n\\nDear Brothers and Sisters,\\n\\nSister Ackerman and Sister Blue welcome you home to our sacred circle! Here are the key details for our **7-week journey**:\\n\\n⏰ **1. Wednesday Gatherings (Only 45 Minutes!):**\\n- **Duration:** Exactly **45 minutes** each Wednesday on Zoom. Focused, uplifting, and low-data friendly!\\n- **75% Attendance Rule:** In our 7-week block (7 total gatherings), you must attend **at least 6 of the 7 gatherings (86%)** to meet the 75% credit threshold.\\n- **Full Grace for Real Life:** Facing load-shedding or internet issues? Don't stress! Just message Sister Ackerman & Sister Blue as soon as you are able.\\n\\n🤖 **2. AI & Academic Honesty:**\\n- Under BYU-Pathway policy, the misuse of generative AI is classified as academic misconduct.\\n- AI can help look up historical context or scripture cross-references, but **your testimony, discussion posts, and spiritual ponderings must come from your own heart and the Spirit**.\\n\\n💬 **3. Join Our WhatsApp Family:**\\nTap to join our WhatsApp group for class reminders and support: https://chat.whatsapp.com/LeJuLWDMAZT8mrqVvP5m6V\\n\\nWith love,\\nSister Mary Ackerman & Sister Dawn Louise Blue 🤍🇿🇦`;
+
+      navigator.clipboard.writeText(text).then(() => {
+        const btn = document.getElementById('copy-btn');
+        const orig = btn.innerText;
+        btn.innerText = "✓ Copied to Clipboard!";
+        btn.classList.add('bg-emerald-600', 'text-white');
+        setTimeout(() => {
+          btn.innerText = orig;
+          btn.classList.remove('bg-emerald-600', 'text-white');
+        }, 2500);
+      });
+    }
+
+    // --- Live Gathering Countdown Engine ---
+    function updateLiveCountdown() {
+      // Calculate current time in SAST (UTC+2)
+      const now = new Date();
+      const utcMs = now.getTime() + (now.getTimezoneOffset() * 60000);
+      const sastNow = new Date(utcMs + (2 * 3600000));
+
+      // Calculate next Wednesday at 18:00 SAST
+      // Day of week in JS: 0 = Sun, 1 = Mon, 2 = Tue, 3 = Wed, 4 = Thu, 5 = Fri, 6 = Sat
+      const currentDay = sastNow.getDay();
+      let daysUntilWed = (3 - currentDay + 7) % 7;
+
+      const targetWed = new Date(sastNow);
+      targetWed.setDate(sastNow.getDate() + daysUntilWed);
+      targetWed.setHours(18, 0, 0, 0);
+
+      // If today is Wednesday and past 18:45 SAST (class ended), target next week
+      if (daysUntilWed === 0) {
+        const classEnd = new Date(targetWed);
+        classEnd.setMinutes(45);
+        if (sastNow > classEnd) {
+          targetWed.setDate(targetWed.getDate() + 7);
+        }
+      }
+
+      const diffMs = targetWed.getTime() - sastNow.getTime();
+      const container = document.getElementById('live-countdown-container');
+
+      // Check if class is LIVE right now (Wednesday 18:00 to 18:45 SAST)
+      if (diffMs <= 0 && diffMs >= -45 * 60000) {
+        if (container) {
+          container.innerHTML = `
+            <a href="https://byupw.instructure.com/courses/63761/modules" target="_blank" class="px-4 py-2 rounded-xl bg-red-600 text-white font-black text-xs sm:text-sm uppercase tracking-wider animate-pulse flex items-center gap-2 shadow-lg hover:bg-red-700 transition">
+              <span class="w-3 h-3 rounded-full bg-white animate-ping"></span>
+              <span>🔴 Class is LIVE Right Now! Join Zoom →</span>
+            </a>
+          `;
+        }
+        return;
+      }
+
+      const totalSecs = Math.max(0, Math.floor(diffMs / 1000));
+      const d = Math.floor(totalSecs / 86400);
+      const h = Math.floor((totalSecs % 86400) / 3600);
+      const m = Math.floor((totalSecs % 3600) / 60);
+      const s = totalSecs % 60;
+
+      const daysElem = document.getElementById('cd-live-days');
+      const hoursElem = document.getElementById('cd-live-hours');
+      const minsElem = document.getElementById('cd-live-mins');
+      const secsElem = document.getElementById('cd-live-secs');
+
+      if (daysElem) daysElem.innerText = String(d).padStart(2, '0');
+      if (hoursElem) hoursElem.innerText = String(h).padStart(2, '0');
+      if (minsElem) minsElem.innerText = String(m).padStart(2, '0');
+      if (secsElem) secsElem.innerText = String(s).padStart(2, '0');
+    }
+
+    // Run immediately and tick live every second
+    updateLiveCountdown();
+    setInterval(updateLiveCountdown, 1000);
+  </script>
+</body>
+</html>

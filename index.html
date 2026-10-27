@@ -320,15 +320,62 @@
           </div>
         </div>
 
-        <!-- 7-Week Interactive Attendance Calculator -->
-        <div class="p-5 rounded-2xl border-2 border-blue-500 bg-white space-y-4 shadow-md">
-          <div class="flex items-center justify-between">
-            <h3 class="font-black text-sm text-slate-950 flex items-center gap-2">
-              <span>📊</span> REL 250 B 7-Week Attendance Calculator (45-Min Sessions)
-            </h3>
-            <span class="px-3 py-1 rounded-md bg-blue-100 text-blue-950 text-xs font-black border-2 border-blue-400">
-              Required: 75% (6 of 7)
+        <!-- FUN INTERACTIVE 1: 7-Week Disciple Journey Tracker (Clickable Badges) -->
+        <div class="p-5 rounded-2xl border-2 border-emerald-600 bg-gradient-to-br from-emerald-50 via-white to-blue-50 space-y-4 shadow-md">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <div>
+              <div class="text-xs font-black text-emerald-900 uppercase tracking-wider flex items-center gap-1.5">
+                <span>🎯</span> Interactive 7-Week Disciple Trail
+              </div>
+              <h3 class="font-black text-base text-slate-950">
+                Tap Each Week You Attend to Unlock Your Disciple Milestones!
+              </h3>
+            </div>
+            <span id="journey-unlocked-badge" class="px-3.5 py-1.5 rounded-full bg-emerald-700 text-white text-xs font-black shadow-sm flex items-center gap-1.5">
+              <span>🌟</span> <span id="journey-badge-text">7 of 7 Gatherings Active</span>
             </span>
+          </div>
+
+          <p class="text-xs text-slate-800 font-bold leading-relaxed">
+            Tap each week circle to mark your attendance. Watch your credit status level up live with sound and celebrations!
+          </p>
+
+          <!-- 7 Week Interactive Buttons Grid -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-7 gap-2" id="week-journey-grid">
+            <!-- Injected by JavaScript dynamically -->
+          </div>
+        </div>
+
+        <!-- 7-Week Interactive Attendance Calculator + Fun Simulators -->
+        <div class="p-5 rounded-2xl border-2 border-blue-500 bg-white space-y-4 shadow-md">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <h3 class="font-black text-sm text-slate-950 flex items-center gap-2">
+              <span>📊</span> REL 250 B 7-Week Attendance Calculator & Simulator
+            </h3>
+            <span class="px-3 py-1 rounded-md bg-blue-100 text-blue-950 text-xs font-black border-2 border-blue-400 self-start sm:self-auto">
+              Required: 75% (6 of 7 Gatherings)
+            </span>
+          </div>
+
+          <!-- Quick Scenario Presets -->
+          <div class="p-3 bg-slate-100 rounded-xl border border-slate-300 space-y-2">
+            <div class="text-xs font-black text-slate-800 flex items-center gap-1.5">
+              <span>⚡</span> Fun Simulator: Test Real-Life Scenarios with One Tap!
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <button onclick="setAttendancePreset(7)" type="button" class="px-3 py-1.5 rounded-lg bg-emerald-700 hover:bg-emerald-800 text-white font-black text-xs transition flex items-center gap-1.5 shadow-sm active:scale-95">
+                <span>👑</span> Faithful Finisher (7/7 • 100%)
+              </button>
+              <button onclick="setAttendancePreset(6)" type="button" class="px-3 py-1.5 rounded-lg bg-blue-700 hover:bg-blue-800 text-white font-black text-xs transition flex items-center gap-1.5 shadow-sm active:scale-95">
+                <span>💡</span> Load-Shedding Grace (6/7 • 86%)
+              </button>
+              <button onclick="setAttendancePreset(5)" type="button" class="px-3 py-1.5 rounded-lg bg-amber-700 hover:bg-amber-800 text-white font-black text-xs transition flex items-center gap-1.5 shadow-sm active:scale-95">
+                <span>⚠️</span> 2 Misses (5/7 • 71% Risk)
+              </button>
+              <button onclick="setAttendancePreset(4)" type="button" class="px-3 py-1.5 rounded-lg bg-rose-700 hover:bg-rose-800 text-white font-black text-xs transition flex items-center gap-1.5 shadow-sm active:scale-95">
+                <span>🚨</span> 3 Misses (4/7 • 57%)
+              </button>
+            </div>
           </div>
 
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 items-center bg-slate-50 p-4 rounded-xl border-2 border-slate-300">
@@ -338,13 +385,44 @@
               <span class="text-[11px] text-slate-600 font-bold">Fixed: 1 gathering per week for 7 weeks</span>
 
               <label class="block text-xs font-black text-slate-900 mt-3 mb-1">Wednesday Gatherings You Attended (0 - 7)</label>
-              <input type="number" id="calc-attended" value="7" min="0" max="7" class="w-full bg-white border-2 border-blue-600 rounded-lg px-3 py-1.5 text-xs font-black text-slate-900" oninput="updateAttendanceCalc()">
+              <input type="number" id="calc-attended" value="7" min="0" max="7" class="w-full bg-white border-2 border-blue-600 rounded-lg px-3 py-1.5 text-xs font-black text-slate-900" oninput="updateAttendanceFromInput()">
+              <span class="text-[11px] text-slate-600 font-bold">Adjust slider or number, or tap the week badges above!</span>
             </div>
 
-            <div class="flex flex-col items-center justify-center p-4 rounded-xl bg-white border-2 border-slate-300 text-center shadow-sm">
-              <div id="calc-rate-label" class="text-3xl font-black text-emerald-700">100%</div>
+            <div class="flex flex-col items-center justify-center p-5 rounded-xl bg-white border-2 border-slate-300 text-center shadow-sm relative overflow-hidden" id="calc-result-box">
+              <div id="calc-rate-label" class="text-4xl font-black text-emerald-700">100%</div>
               <div id="calc-status-badge" class="badge mt-2 bg-emerald-700 text-white font-black shadow-sm">Credit Secured (7 of 7)</div>
-              <p id="calc-advice" class="text-xs text-slate-700 font-bold mt-2">Perfect attendance! Full 45-minute gathering credit secured.</p>
+              <p id="calc-advice" class="text-xs text-slate-800 font-bold mt-2">Perfect attendance! Full 45-minute gathering credit secured.</p>
+              <button onclick="triggerConfetti(); playCelebrationChime();" type="button" class="mt-3 px-3 py-1 rounded-full bg-amber-100 hover:bg-amber-200 text-amber-950 font-black text-[11px] border border-amber-400 transition flex items-center gap-1">
+                <span>🎉</span> Tap for Victory Celebration!
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- FUN INTERACTIVE 2: Gathering Superpower Spinner -->
+        <div class="p-5 rounded-2xl border-2 border-purple-500 bg-gradient-to-br from-purple-50 via-white to-pink-50 space-y-3 shadow-md">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <div>
+              <div class="text-xs font-black text-purple-900 uppercase tracking-wider flex items-center gap-1.5">
+                <span>🎲</span> Gathering Mini-Game
+              </div>
+              <h3 class="font-black text-sm text-slate-950">
+                Weekly Spirit Sparker: Spin for Your Wednesday Gathering Superpower!
+              </h3>
+            </div>
+            <button onclick="spinSuperpower()" id="spin-btn" type="button" class="px-4 py-2 rounded-xl bg-purple-700 hover:bg-purple-800 text-white font-black text-xs uppercase tracking-wider transition shadow flex items-center gap-1.5 self-start sm:self-auto active:scale-95">
+              <span>✨</span> Spin My Role!
+            </button>
+          </div>
+
+          <div id="superpower-card" class="p-4 rounded-xl border-2 border-purple-300 bg-white flex items-center gap-4 shadow-sm transition-all duration-300">
+            <div id="superpower-emoji" class="text-4xl shrink-0 p-2 bg-purple-100 rounded-xl border border-purple-200">🌟</div>
+            <div>
+              <div id="superpower-title" class="font-black text-base text-purple-950">The Joyful Greeter</div>
+              <div id="superpower-desc" class="text-xs text-slate-800 font-bold leading-relaxed mt-0.5">
+                Log into Zoom at 5:45 PM and welcome 3 classmates by name in the chat before class begins!
+              </div>
             </div>
           </div>
         </div>
@@ -637,7 +715,81 @@
       });
     }
 
-    function updateAttendanceCalc() {
+    // --- Fun Gamified Attendance & Disciple Trail Engine ---
+    let weekAttendance = [true, true, true, true, true, true, true];
+    const weekMeta = [
+      { w: 1, title: "W1: First Circle", icon: "🌟", desc: "Launch" },
+      { w: 2, title: "W2: Bread of Life", icon: "🥖", desc: "Nourish" },
+      { w: 3, title: "W3: Grace & Light", icon: "🕊️", desc: "Healing" },
+      { w: 4, title: "W4: Halfway Peak", icon: "🛡️", desc: "Endure" },
+      { w: 5, title: "W5: Light of Zion", icon: "💡", desc: "Beacon" },
+      { w: 6, title: "W6: Credit Locked!", icon: "🏆", desc: "75% Target!" },
+      { w: 7, title: "W7: Faithful Finisher", icon: "👑", desc: "Crown" }
+    ];
+
+    function renderWeekJourney() {
+      const grid = document.getElementById('week-journey-grid');
+      if (!grid) return;
+      grid.innerHTML = '';
+
+      weekMeta.forEach((item, idx) => {
+        const isAttended = weekAttendance[idx];
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.onclick = () => toggleWeek(idx);
+        btn.className = isAttended
+          ? "p-2.5 rounded-xl border-2 border-emerald-500 bg-emerald-700 text-white shadow-sm flex flex-col items-center justify-between text-center transition-all transform active:scale-95 hover:bg-emerald-800"
+          : "p-2.5 rounded-xl border-2 border-slate-300 bg-slate-100 text-slate-700 shadow-sm flex flex-col items-center justify-between text-center transition-all transform active:scale-95 hover:bg-slate-200 opacity-75";
+
+        btn.innerHTML = `
+          <div class="text-2xl">${item.icon}</div>
+          <div class="text-[11px] font-black leading-tight mt-1">${item.title}</div>
+          <div class="text-[10px] mt-1.5 px-1.5 py-0.5 rounded font-black ${isAttended ? 'bg-emerald-900 text-emerald-100' : 'bg-slate-300 text-slate-800'}">
+            ${isAttended ? '✓ Attended' : '— Missed'}
+          </div>
+        `;
+        grid.appendChild(btn);
+      });
+
+      const count = weekAttendance.filter(Boolean).length;
+      const badgeText = document.getElementById('journey-badge-text');
+      if (badgeText) {
+        badgeText.innerText = `${count} of 7 Gatherings Active`;
+      }
+    }
+
+    function toggleWeek(idx) {
+      weekAttendance[idx] = !weekAttendance[idx];
+      const count = weekAttendance.filter(Boolean).length;
+      const input = document.getElementById('calc-attended');
+      if (input) input.value = count;
+      renderWeekJourney();
+      updateAttendanceCalc(true);
+    }
+
+    function setAttendancePreset(val) {
+      for (let i = 0; i < 7; i++) {
+        weekAttendance[i] = i < val;
+      }
+      const input = document.getElementById('calc-attended');
+      if (input) input.value = val;
+      renderWeekJourney();
+      updateAttendanceCalc(true);
+    }
+
+    function updateAttendanceFromInput() {
+      let attended = parseInt(document.getElementById('calc-attended').value);
+      if (isNaN(attended)) attended = 0;
+      if (attended > 7) attended = 7;
+      if (attended < 0) attended = 0;
+      for (let i = 0; i < 7; i++) {
+        weekAttendance[i] = i < attended;
+      }
+      renderWeekJourney();
+      updateAttendanceCalc(true);
+    }
+
+    function updateAttendanceCalc(triggerCelebration = false) {
       const total = 7;
       let attended = parseInt(document.getElementById('calc-attended').value);
       if (isNaN(attended)) attended = 0;
@@ -651,25 +803,235 @@
       const badge = document.getElementById('calc-status-badge');
       const advice = document.getElementById('calc-advice');
 
-      label.innerText = rate + '%';
+      if (label) label.innerText = rate + '%';
 
       if (attended >= 6) {
-        label.className = "text-3xl font-black text-emerald-700";
-        badge.className = "badge mt-2 bg-emerald-700 text-white font-black";
-        badge.innerText = `Credit Secured (${attended}/7 Gatherings)`;
-        advice.innerText = attended === 7 ? "Perfect attendance! All 7 weekly 45-minute gatherings attended." : "Meets the 75% requirement. Great job staying on track!";
+        if (label) label.className = "text-4xl font-black text-emerald-700";
+        if (badge) {
+          badge.className = "badge mt-2 bg-emerald-700 text-white font-black shadow-sm text-xs py-1 px-3";
+          badge.innerText = attended === 7 ? "🏆 Credit Secured: 100% (7 of 7)" : "✅ Credit Secured: 86% (6 of 7)";
+        }
+        if (advice) advice.innerText = attended === 7 
+          ? "🌟 Outstanding! Perfect 7-week attendance record! Faithful Finisher crown secured." 
+          : "🎉 Great job! 86% easily clears the 75% course credit requirement!";
+        
+        if (triggerCelebration) {
+          triggerConfetti();
+          playCelebrationChime();
+        }
       } else if (attended === 5) {
-        label.className = "text-3xl font-black text-amber-700";
-        badge.className = "badge mt-2 bg-amber-600 text-white font-black";
-        badge.innerText = `Below 75% Threshold: 71% (5/7)`;
-        advice.innerText = "Warning: 5/7 is 71%, which is below the 75% requirement. Message Sister Ackerman & Sister Blue on WhatsApp!";
+        if (label) label.className = "text-4xl font-black text-amber-700";
+        if (badge) {
+          badge.className = "badge mt-2 bg-amber-600 text-white font-black shadow-sm text-xs py-1 px-3";
+          badge.innerText = "⚠️ Below 75% Requirement: 71% (5 of 7)";
+        }
+        if (advice) advice.innerText = "Notice: 5/7 is 71%, which falls just below the 75% credit standard. Text Sister Ackerman & Sister Blue on WhatsApp for make-up options!";
       } else {
-        label.className = "text-3xl font-black text-red-700";
-        badge.className = "badge mt-2 bg-red-600 text-white font-black";
-        badge.innerText = `At Severe Risk: ${rate}% (${attended}/7)`;
-        advice.innerText = "Crucial: Excessive absences in a 7-week block will result in loss of course credit. Please connect with us immediately!";
+        if (label) label.className = "text-4xl font-black text-rose-700";
+        if (badge) {
+          badge.className = "badge mt-2 bg-rose-600 text-white font-black shadow-sm text-xs py-1 px-3";
+          badge.innerText = `🚨 At Serious Risk: ${rate}% (${attended} of 7)`;
+        }
+        if (advice) advice.innerText = "Emergency: In a 7-week block, missing multiple gatherings jeopardizes course credit. Connect with instructors immediately!";
       }
     }
+
+    // --- Audio Chime Synthesizer (Zero External Dependencies) ---
+    function playCelebrationChime() {
+      try {
+        const AudioCtx = window.AudioContext || window.webkitAudioContext;
+        if (!AudioCtx) return;
+        const ctx = new AudioCtx();
+        const now = ctx.currentTime;
+        const osc1 = ctx.createOscillator();
+        const osc2 = ctx.createOscillator();
+        const gain = ctx.createGain();
+
+        osc1.type = 'triangle';
+        osc2.type = 'sine';
+
+        osc1.frequency.setValueAtTime(523.25, now); // C5
+        osc1.frequency.exponentialRampToValueAtTime(659.25, now + 0.15); // E5
+        osc2.frequency.setValueAtTime(783.99, now + 0.15); // G5
+        osc2.frequency.exponentialRampToValueAtTime(1046.50, now + 0.35); // C6
+
+        gain.gain.setValueAtTime(0.12, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.7);
+
+        osc1.connect(gain);
+        osc2.connect(gain);
+        gain.connect(ctx.destination);
+
+        osc1.start(now);
+        osc2.start(now + 0.15);
+        osc1.stop(now + 0.7);
+        osc2.stop(now + 0.7);
+      } catch (e) {
+        // AudioContext restricted before first gesture
+      }
+    }
+
+    // --- Lightweight Canvas Confetti Engine ---
+    let confettiRunning = false;
+    function triggerConfetti() {
+      const canvas = document.getElementById('confetti-canvas');
+      if (!canvas) return;
+      canvas.classList.remove('hidden');
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      const ctx = canvas.getContext('2d');
+
+      const colors = ['#1e3a8a', '#059669', '#d97706', '#dc2626', '#8b5cf6', '#f59e0b', '#10b981'];
+      const pieces = [];
+      for (let i = 0; i < 90; i++) {
+        pieces.push({
+          x: canvas.width * (0.2 + Math.random() * 0.6),
+          y: canvas.height * 0.65,
+          vx: (Math.random() - 0.5) * 14,
+          vy: - (8 + Math.random() * 12),
+          size: 6 + Math.random() * 8,
+          color: colors[Math.floor(Math.random() * colors.length)],
+          rotation: Math.random() * 360,
+          rotSpeed: (Math.random() - 0.5) * 12,
+          opacity: 1
+        });
+      }
+
+      if (confettiRunning) return;
+      confettiRunning = true;
+      let frames = 0;
+
+      function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        let active = false;
+
+        pieces.forEach(p => {
+          p.x += p.vx;
+          p.y += p.vy;
+          p.vy += 0.38; // gravity
+          p.vx *= 0.98;
+          p.rotation += p.rotSpeed;
+          if (frames > 40) p.opacity -= 0.015;
+
+          if (p.opacity > 0 && p.y < canvas.height + 50) {
+            active = true;
+            ctx.save();
+            ctx.globalAlpha = Math.max(0, p.opacity);
+            ctx.translate(p.x, p.y);
+            ctx.rotate((p.rotation * Math.PI) / 180);
+            ctx.fillStyle = p.color;
+            ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size * 0.6);
+            ctx.restore();
+          }
+        });
+
+        frames++;
+        if (active && frames < 140) {
+          requestAnimationFrame(animate);
+        } else {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          canvas.classList.add('hidden');
+          confettiRunning = false;
+        }
+      }
+      requestAnimationFrame(animate);
+    }
+
+    // --- Gathering Superpower Spinner ---
+    const superpowers = [
+      {
+        emoji: "🌟",
+        title: "The Joyful Greeter",
+        desc: "Log into Zoom at 5:45 PM and welcome 3 classmates by name in the chat before class starts!"
+      },
+      {
+        emoji: "📖",
+        title: "The Scripture Quick-Draw",
+        desc: "Have your Gospel Library ready to read a verse out loud with conviction when called upon!"
+      },
+      {
+        emoji: "💬",
+        title: "The Chat Cheerleader",
+        desc: "Drop at least 2 thoughtful reflections or encouraging emojis when classmates share their hearts!"
+      },
+      {
+        emoji: "💡",
+        title: "The Curious Disciple",
+        desc: "Prepare 1 heartfelt question about Jesus Christ to ask or ponder during our 45-minute gathering!"
+      },
+      {
+        emoji: "🕊️",
+        title: "The Silent Intercessor",
+        desc: "Say a silent prayer at 5:55 PM for everyone in our class wrestling with load-shedding or WiFi challenges."
+      },
+      {
+        emoji: "🛡️",
+        title: "The WhatsApp Beacon",
+        desc: "Post 1 golden takeaway from the 45-minute gathering in our WhatsApp group right after class!"
+      },
+      {
+        emoji: "⚡",
+        title: "The Load-Shedding Warrior",
+        desc: "Charged phone, mobile hotspot standby, smiling through any blackout like a champ!"
+      },
+      {
+        emoji: "🇿🇦",
+        title: "The Circle Uniter",
+        desc: "Share a 30-second testimony that reminds everyone that Jesus Christ knows us each by name."
+      }
+    ];
+
+    let isSpinning = false;
+    function spinSuperpower() {
+      if (isSpinning) return;
+      isSpinning = true;
+      const btn = document.getElementById('spin-btn');
+      const card = document.getElementById('superpower-card');
+      const emojiElem = document.getElementById('superpower-emoji');
+      const titleElem = document.getElementById('superpower-title');
+      const descElem = document.getElementById('superpower-desc');
+
+      btn.disabled = true;
+      btn.classList.add('opacity-50');
+
+      let counter = 0;
+      const totalTicks = 18;
+      const interval = setInterval(() => {
+        const rand = superpowers[Math.floor(Math.random() * superpowers.length)];
+        emojiElem.innerText = rand.emoji;
+        titleElem.innerText = rand.title;
+        descElem.innerText = rand.desc;
+        counter++;
+
+        if (counter >= totalTicks) {
+          clearInterval(interval);
+          const finalChoice = superpowers[Math.floor(Math.random() * superpowers.length)];
+          emojiElem.innerText = finalChoice.emoji;
+          titleElem.innerText = finalChoice.title;
+          descElem.innerText = finalChoice.desc;
+
+          card.classList.add('ring-4', 'ring-purple-400', 'scale-[1.02]');
+          setTimeout(() => card.classList.remove('ring-4', 'ring-purple-400', 'scale-[1.02]'), 1500);
+
+          triggerConfetti();
+          playCelebrationChime();
+          btn.disabled = false;
+          btn.classList.remove('opacity-50');
+          isSpinning = false;
+        }
+      }, 70);
+    }
+
+    // Auto-switch tab if URL hash is present (#attendance, #welcome, etc.)
+    window.addEventListener('DOMContentLoaded', () => {
+      renderWeekJourney();
+      if (window.location.hash) {
+        const hash = window.location.hash.replace('#', '');
+        if (['welcome', 'attendance', 'ai-policy', 'scenarios', 'circle'].includes(hash)) {
+          switchTab(hash);
+        }
+      }
+    });
 
     let score = 0;
     const answered = { 1: false, 2: false, 3: false, 4: false };
@@ -787,5 +1149,7 @@
     updateLiveCountdown();
     setInterval(updateLiveCountdown, 1000);
   </script>
+  <!-- Confetti Canvas for Celebrations -->
+  <canvas id="confetti-canvas" class="pointer-events-none fixed inset-0 z-50 w-full h-full hidden"></canvas>
 </body>
 </html>

@@ -220,6 +220,9 @@
       <button onclick="switchTab('welcome')" id="tab-welcome" class="tab-btn tab-active px-4 py-3 rounded-t-xl text-xs sm:text-sm font-black transition-colors flex items-center gap-1.5 whitespace-nowrap">
         <span>🤍</span> Welcome Home
       </button>
+      <button onclick="switchTab('devotional')" id="tab-devotional" class="tab-btn px-4 py-3 rounded-t-xl text-xs sm:text-sm font-bold text-slate-700 hover:text-black transition-colors flex items-center gap-1.5 whitespace-nowrap">
+        <span>✨</span> Devotional &amp; Prayer Sign-Up
+      </button>
       <button onclick="switchTab('attendance')" id="tab-attendance" class="tab-btn px-4 py-3 rounded-t-xl text-xs sm:text-sm font-bold text-slate-700 hover:text-black transition-colors flex items-center gap-1.5 whitespace-nowrap">
         <span>⏰</span> 45-Min Gathering Policy
       </button>
@@ -279,6 +282,131 @@
             Facing load-shedding? Internet acting up? Children laughing in the background? <strong class="bg-amber-200 text-amber-950 px-1 py-0.5 rounded">Please don't worry for a second!</strong> Bring your real, faithful self just as you are. Just let Sister Ackerman and Sister Blue know via WhatsApp or email, and we will support you with all our hearts!
           </p>
         </div>
+      </section>
+
+      <!-- TAB: DEVOTIONAL & PRAYER SIGN-UP (6 WEDNESDAYS: NOV 4 - DEC 9) -->
+      <section id="panel-devotional" class="hidden space-y-6">
+
+        <!-- Top Header & Blessing Banner -->
+        <div class="bg-gradient-to-r from-blue-900 via-indigo-900 to-slate-900 text-white p-6 rounded-2xl border-2 border-amber-400 shadow-lg space-y-4">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div>
+              <span class="px-3 py-1 rounded-full bg-amber-400 text-slate-950 font-black text-xs uppercase tracking-wider inline-block mb-2">
+                🌟 Sacred Calling &amp; Participation
+              </span>
+              <h2 class="text-xl sm:text-2xl font-black text-white flex items-center gap-2">
+                <span>✨</span> Weekly Devotional &amp; Prayer Sign-Up
+              </h2>
+              <p class="text-sm text-blue-100 font-semibold mt-1">
+                Every Wednesday • 6:00 – 6:45 PM SAST • 6 Gathering Dates (Nov 4 – Dec 9)
+              </p>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1.5 rounded-xl bg-blue-800/80 border border-blue-400 text-xs font-black text-white">
+                📖 6 Devotionals Needed (3–5 Min)
+              </span>
+              <span class="px-3 py-1.5 rounded-xl bg-indigo-800/80 border border-indigo-400 text-xs font-black text-white">
+                🙏 6 Opening &amp; 6 Closing Prayers
+              </span>
+            </div>
+          </div>
+
+          <!-- Scripture & Promised Blessings Callout -->
+          <div class="p-4 bg-white/10 backdrop-blur rounded-xl border border-white/20 text-xs sm:text-sm text-blue-50 space-y-2">
+            <p class="italic text-amber-200 font-bold">
+              “Appoint among yourselves a teacher, and let not all be spokesmen at once; but let one speak at a time and let all listen unto his sayings, that when all have spoken that all may be edified of all, and that every man may have an equal privilege.” — Doctrine &amp; Covenants 88:122
+            </p>
+            <p class="text-white font-medium leading-relaxed">
+              When you step forward to share a spiritual thought or offer a prayer, you are not performing—you are consecrating our gathering. The Lord has promised rich personal blessings to all who share their voice!
+            </p>
+          </div>
+        </div>
+
+        <!-- 4 Promised Blessings Cards (High Contrast, Inspiring) -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div class="p-4 rounded-xl border-2 border-emerald-500 bg-emerald-50 space-y-2 shadow-sm">
+            <div class="text-2xl">🕊️</div>
+            <h3 class="font-black text-sm text-emerald-950">Power of the Holy Ghost</h3>
+            <p class="text-xs text-slate-800 font-semibold leading-relaxed">
+              When you testify of Jesus Christ, the Spirit carries the message directly into the hearts of your classmates (2 Nephi 33:1).
+            </p>
+          </div>
+
+          <div class="p-4 rounded-xl border-2 border-blue-500 bg-blue-50 space-y-2 shadow-sm">
+            <div class="text-2xl">🔥</div>
+            <h3 class="font-black text-sm text-blue-950">Testimony That Catches Fire</h3>
+            <p class="text-xs text-slate-800 font-semibold leading-relaxed">
+              A testimony is often found and strengthened in the very act of sharing it. Your own faith will expand and deepen!
+            </p>
+          </div>
+
+          <div class="p-4 rounded-xl border-2 border-purple-500 bg-purple-50 space-y-2 shadow-sm">
+            <div class="text-2xl">🛡️</div>
+            <h3 class="font-black text-sm text-purple-950">Spiritual Confidence</h3>
+            <p class="text-xs text-slate-800 font-semibold leading-relaxed">
+              Overcome speaking anxiety in a warm, loving circle where Sister Ackerman, Sister Blue, and all your peers cheer you on.
+            </p>
+          </div>
+
+          <div class="p-4 rounded-xl border-2 border-amber-500 bg-amber-50 space-y-2 shadow-sm">
+            <div class="text-2xl">🤍</div>
+            <h3 class="font-black text-sm text-amber-950">Answering a Peer’s Prayer</h3>
+            <p class="text-xs text-slate-800 font-semibold leading-relaxed">
+              Someone in our gathering is quietly praying for hope. The scripture and thought you share may be heaven’s answer to them.
+            </p>
+          </div>
+        </div>
+
+        <!-- Interactive Sign-Up Instructions & Status -->
+        <div class="p-4 rounded-xl border-2 border-slate-300 bg-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div class="space-y-0.5">
+            <div class="text-xs font-black text-slate-900 uppercase tracking-wide flex items-center gap-1.5">
+              <span>📋</span> Interactive Sign-Up Board (6 Gathering Dates)
+            </div>
+            <p class="text-xs text-slate-700 font-bold">
+              Tap any <span class="text-emerald-700 font-black">“Claim Slot”</span> button below to sign up. Your claim saves instantly on your device and generates a 1-tap WhatsApp confirmation!
+            </p>
+          </div>
+          <button onclick="resetDevotionalSignups()" type="button" class="text-[11px] font-black text-slate-600 hover:text-slate-900 underline self-start sm:self-auto">
+            Reset My Local Sign-Ups
+          </button>
+        </div>
+
+        <!-- 6 Gathering Dates Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5" id="devotional-dates-grid">
+          <!-- Dynamically populated by renderDevotionalSlots() -->
+        </div>
+
+        <!-- How to Prepare a Simple 3-5 Minute Devotional Card -->
+        <div class="p-5 rounded-2xl border-2 border-indigo-400 bg-gradient-to-br from-indigo-50 via-white to-blue-50 space-y-3 shadow-md">
+          <div class="flex items-center gap-2">
+            <span class="text-2xl">💡</span>
+            <h3 class="font-black text-base text-slate-950">
+              Simple 3-Step Recipe for a Powerful 3–5 Minute Spiritual Thought
+            </h3>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-1">
+            <div class="p-3 bg-white rounded-xl border border-indigo-200 space-y-1">
+              <div class="text-xs font-black text-indigo-900">1️⃣ The Scripture (1 Min)</div>
+              <p class="text-xs text-slate-700 font-semibold">
+                Read 1 or 2 verses about Jesus Christ from this week’s lesson materials.
+              </p>
+            </div>
+            <div class="p-3 bg-white rounded-xl border border-indigo-200 space-y-1">
+              <div class="text-xs font-black text-indigo-900">2️⃣ The Insight (2 Mins)</div>
+              <p class="text-xs text-slate-700 font-semibold">
+                Share what this verse means to you in your daily walk or a brief personal lesson learned.
+              </p>
+            </div>
+            <div class="p-3 bg-white rounded-xl border border-indigo-200 space-y-1">
+              <div class="text-xs font-black text-indigo-900">3️⃣ The Testimony (1 Min)</div>
+              <p class="text-xs text-slate-700 font-semibold">
+                Close with your heartfelt testimony in the sacred name of Jesus Christ. Keep it pure and simple!
+              </p>
+            </div>
+          </div>
+        </div>
+
       </section>
 
       <!-- TAB 2: 45-MINUTE GATHERING POLICY -->
@@ -699,7 +827,7 @@
     }
 
     function switchTab(tabName) {
-      const tabs = ['welcome', 'attendance', 'ai-policy', 'scenarios', 'circle'];
+      const tabs = ['welcome', 'devotional', 'attendance', 'ai-policy', 'scenarios', 'circle'];
       tabs.forEach(t => {
         const btn = document.getElementById('tab-' + t);
         const panel = document.getElementById('panel-' + t);
@@ -1022,12 +1150,218 @@
       }, 70);
     }
 
+    
+    // --- 6-Week Gathering Devotional & Prayer Sign-Up Engine ---
+    const gatheringDates = [
+      { id: "g1", dateStr: "Wednesday, Nov 4", fullDate: "November 4, 2026", theme: "Gathering 1: The Living Christ" },
+      { id: "g2", dateStr: "Wednesday, Nov 11", fullDate: "November 11, 2026", theme: "Gathering 2: The Bread of Life" },
+      { id: "g3", dateStr: "Wednesday, Nov 18", fullDate: "November 18, 2026", theme: "Gathering 3: Grace & Healing" },
+      { id: "g4", dateStr: "Wednesday, Nov 25", fullDate: "November 25, 2026", theme: "Gathering 4: Enduring in Faith" },
+      { id: "g5", dateStr: "Wednesday, Dec 2", fullDate: "December 2, 2026", theme: "Gathering 5: Light of the World" },
+      { id: "g6", dateStr: "Wednesday, Dec 9", fullDate: "December 9, 2026", theme: "Gathering 6: Final Testimony Circle" }
+    ];
+
+    const roleDefinitions = {
+      devotional: { title: "3–5 Min Devotional", icon: "📖", desc: "Spiritual Thought on Jesus Christ", badge: "6 Needed Total" },
+      open_prayer: { title: "Opening Prayer", icon: "🌅", desc: "Invites the Spirit into our circle", badge: "Every Wednesday" },
+      close_prayer: { title: "Closing Prayer", icon: "🌌", desc: "Seals the gathering & dedicates week", badge: "Every Wednesday" }
+    };
+
+    function getStoredDevotionalSignups() {
+      try {
+        const raw = localStorage.getItem('rel250b_devotional_signups');
+        return raw ? JSON.parse(raw) : {};
+      } catch (e) {
+        return {};
+      }
+    }
+
+    function saveDevotionalSignups(data) {
+      try {
+        localStorage.setItem('rel250b_devotional_signups', JSON.stringify(data));
+      } catch (e) {}
+    }
+
+    function renderDevotionalSlots() {
+      const container = document.getElementById('devotional-dates-grid');
+      if (!container) return;
+      container.innerHTML = '';
+
+      const signups = getStoredDevotionalSignups();
+
+      gatheringDates.forEach((g, gIdx) => {
+        const card = document.createElement('div');
+        card.className = "p-5 rounded-2xl border-2 border-slate-300 bg-white space-y-3.5 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between";
+
+        let rolesHtml = '';
+        ['devotional', 'open_prayer', 'close_prayer'].forEach(rKey => {
+          const role = roleDefinitions[rKey];
+          const slotKey = `${g.id}_${rKey}`;
+          const isClaimed = !!signups[slotKey];
+          const claim = signups[slotKey] || {};
+
+          rolesHtml += `
+            <div class="p-3 rounded-xl border-2 ${isClaimed ? 'border-emerald-500 bg-emerald-50/70' : 'border-slate-200 bg-slate-50'} space-y-1.5 transition-all">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-black text-slate-900 flex items-center gap-1.5">
+                  <span>${role.icon}</span> <span>${role.title}</span>
+                </span>
+                <span class="text-[10px] px-2 py-0.5 rounded-full font-black ${isClaimed ? 'bg-emerald-700 text-white' : 'bg-slate-200 text-slate-700'}">
+                  ${isClaimed ? '✓ Claimed' : 'Available'}
+                </span>
+              </div>
+
+              ${isClaimed ? `
+                <div class="pt-1 flex items-center justify-between">
+                  <div class="text-xs font-black text-emerald-950 truncate">
+                    👤 ${claim.name} ${claim.topic ? `<span class="font-normal text-emerald-800 italic text-[11px] block">“${claim.topic}”</span>` : ''}
+                  </div>
+                  <button onclick="unclaimSlot('${slotKey}')" type="button" class="text-[10px] text-slate-500 hover:text-red-700 underline shrink-0 ml-2">
+                    Release
+                  </button>
+                </div>
+              ` : `
+                <div class="pt-1 flex items-center justify-between">
+                  <span class="text-[11px] text-slate-600 font-semibold">${role.desc}</span>
+                  <button onclick="openClaimModal('${g.id}', '${rKey}')" type="button" class="px-2.5 py-1 rounded-lg bg-emerald-700 hover:bg-emerald-800 text-white font-black text-xs shadow-sm transition flex items-center gap-1 active:scale-95 shrink-0">
+                    <span>✨</span> Claim Slot
+                  </button>
+                </div>
+              `}
+            </div>
+          `;
+        });
+
+        card.innerHTML = `
+          <div>
+            <div class="flex items-center justify-between pb-2 border-b-2 border-slate-200">
+              <div>
+                <span class="text-[10px] font-black text-blue-900 uppercase tracking-wider block">Week ${gIdx + 1} of 6</span>
+                <h4 class="font-black text-sm text-slate-950">${g.dateStr}</h4>
+              </div>
+              <span class="px-2.5 py-1 rounded-md bg-blue-100 text-blue-950 text-xs font-black border border-blue-300">
+                6:00 PM SAST
+              </span>
+            </div>
+            <p class="text-[11px] text-slate-700 font-bold mt-1.5 mb-2.5">
+              ${g.theme}
+            </p>
+            <div class="space-y-2">
+              ${rolesHtml}
+            </div>
+          </div>
+          <div class="pt-2 text-[10px] text-slate-500 font-bold text-center border-t border-slate-100">
+            Zoom opens 5:45 PM SAST
+          </div>
+        `;
+
+        container.appendChild(card);
+      });
+    }
+
+    function openClaimModal(gatheringId, roleKey) {
+      const g = gatheringDates.find(item => item.id === gatheringId);
+      const role = roleDefinitions[roleKey];
+      if (!g || !role) return;
+
+      document.getElementById('modal-slot-key').value = `${gatheringId}_${roleKey}`;
+      document.getElementById('modal-gathering-id').value = gatheringId;
+      document.getElementById('modal-role-id').value = roleKey;
+
+      document.getElementById('modal-role-icon').innerText = role.icon;
+      document.getElementById('modal-role-title').innerText = `Claim: ${role.title}`;
+      document.getElementById('modal-date-display').innerText = `${g.dateStr} • 6:00 PM SAST (${g.theme})`;
+
+      const topicGroup = document.getElementById('modal-topic-group');
+      if (roleKey === 'devotional') {
+        topicGroup.classList.remove('hidden');
+        document.getElementById('modal-blessing-hint').innerText = "“When you speak of the Savior, His Spirit warms every soul in our circle.”";
+      } else {
+        topicGroup.classList.add('hidden');
+        document.getElementById('modal-blessing-hint').innerText = "“Prayer consecrates our gathering and invites heaven into every home.”";
+      }
+
+      document.getElementById('modal-student-name').value = '';
+      document.getElementById('modal-student-topic').value = '';
+      document.getElementById('claim-modal').classList.remove('hidden');
+    }
+
+    function closeClaimModal() {
+      document.getElementById('claim-modal').classList.add('hidden');
+    }
+
+    function submitSlotClaim(event) {
+      event.preventDefault();
+      const slotKey = document.getElementById('modal-slot-key').value;
+      const gId = document.getElementById('modal-gathering-id').value;
+      const rKey = document.getElementById('modal-role-id').value;
+      const name = document.getElementById('modal-student-name').value.trim();
+      const topic = document.getElementById('modal-student-topic').value.trim();
+
+      if (!name) return;
+
+      const g = gatheringDates.find(item => item.id === gId);
+      const role = roleDefinitions[rKey];
+
+      const signups = getStoredDevotionalSignups();
+      signups[slotKey] = {
+        name,
+        topic,
+        gatheringId: gId,
+        roleKey: rKey,
+        dateStr: g ? g.dateStr : "",
+        fullDate: g ? g.fullDate : "",
+        roleTitle: role ? role.title : "",
+        claimedAt: new Date().toISOString()
+      };
+      saveDevotionalSignups(signups);
+      closeClaimModal();
+      renderDevotionalSlots();
+
+      // Celebration effects!
+      triggerConfetti();
+      playCelebrationChime();
+
+      // Toast notification with prefilled WhatsApp message
+      const toast = document.getElementById('claim-success-toast');
+      const toastMsg = document.getElementById('claim-success-message');
+      const toastBtn = document.getElementById('claim-whatsapp-btn');
+
+      if (toast && toastMsg && toastBtn) {
+        toastMsg.innerHTML = `<strong>Praise the Lord!</strong> You claimed <strong>${role.title}</strong> for <strong>${g.dateStr}</strong>. Let Sister Ackerman & Sister Blue know!`;
+        
+        const rawMsg = `Hi Sister Ackerman and Sister Blue! 🤍 I am excited to claim a blessing for REL 250 B! I signed up for *${role.title}* on *${g.dateStr}* (${name}). Looking forward to edifying our gathering in the name of Jesus Christ! ✨`;
+        const waLink = `https://wa.me/?text=${encodeURIComponent(rawMsg)}`;
+        toastBtn.href = waLink;
+
+        toast.classList.remove('hidden');
+        setTimeout(() => toast.classList.add('hidden'), 10000);
+      }
+    }
+
+    function unclaimSlot(slotKey) {
+      const signups = getStoredDevotionalSignups();
+      if (signups[slotKey]) {
+        delete signups[slotKey];
+        saveDevotionalSignups(signups);
+        renderDevotionalSlots();
+      }
+    }
+
+    function resetDevotionalSignups() {
+      if (confirm("Reset all local sign-ups on this device?")) {
+        localStorage.removeItem('rel250b_devotional_signups');
+        renderDevotionalSlots();
+      }
+    }
+
     // Auto-switch tab if URL hash is present (#attendance, #welcome, etc.)
     window.addEventListener('DOMContentLoaded', () => {
       renderWeekJourney();
+      renderDevotionalSlots();
       if (window.location.hash) {
         const hash = window.location.hash.replace('#', '');
-        if (['welcome', 'attendance', 'ai-policy', 'scenarios', 'circle'].includes(hash)) {
+        if (['welcome', 'devotional', 'attendance', 'ai-policy', 'scenarios', 'circle'].includes(hash)) {
           switchTab(hash);
         }
       }
@@ -1151,5 +1485,67 @@
   </script>
   <!-- Confetti Canvas for Celebrations -->
   <canvas id="confetti-canvas" class="pointer-events-none fixed inset-0 z-50 w-full h-full hidden"></canvas>
+
+  <!-- Interactive Devotional & Prayer Sign-Up Modal -->
+  <div id="claim-modal" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-md w-full border-2 border-amber-500 shadow-2xl p-6 space-y-4 relative transform transition-all">
+      <div class="flex items-center justify-between pb-2 border-b border-slate-200">
+        <div class="flex items-center gap-2">
+          <span class="text-2xl" id="modal-role-icon">📖</span>
+          <h3 class="font-black text-lg text-slate-950" id="modal-role-title">Claim Your Sacred Slot</h3>
+        </div>
+        <button onclick="closeClaimModal()" type="button" class="text-slate-400 hover:text-slate-700 text-2xl font-black">&times;</button>
+      </div>
+
+      <div class="p-3 bg-amber-50 rounded-xl border border-amber-300 text-xs space-y-1">
+        <div class="font-black text-amber-950" id="modal-date-display">Wednesday, Nov 4 • 6:00 PM SAST</div>
+        <p class="text-amber-900 font-semibold" id="modal-blessing-hint">
+          “When you speak in the name of the Lord, angels attend you.”
+        </p>
+      </div>
+
+      <form onsubmit="submitSlotClaim(event)" class="space-y-3">
+        <input type="hidden" id="modal-slot-key" value="">
+        <input type="hidden" id="modal-gathering-id" value="">
+        <input type="hidden" id="modal-role-id" value="">
+
+        <div>
+          <label class="block text-xs font-black text-slate-900 mb-1">Your Full Name (First &amp; Last) *</label>
+          <input id="modal-student-name" type="text" required placeholder="e.g. Sister Nomsa Dlamini or Brother Kevin Ackerman" class="w-full bg-slate-50 border-2 border-slate-300 focus:border-blue-600 rounded-lg px-3 py-2 text-xs font-black text-slate-950">
+        </div>
+
+        <div id="modal-topic-group">
+          <label class="block text-xs font-black text-slate-900 mb-1">Scripture or Thought Focus (Optional)</label>
+          <input id="modal-student-topic" type="text" placeholder="e.g. John 6:35 or The Power of Grace in My Life" class="w-full bg-slate-50 border-2 border-slate-300 focus:border-blue-600 rounded-lg px-3 py-2 text-xs font-black text-slate-950">
+        </div>
+
+        <div class="pt-2 flex items-center justify-end gap-2">
+          <button onclick="closeClaimModal()" type="button" class="px-4 py-2 rounded-xl border-2 border-slate-300 text-slate-700 font-black text-xs hover:bg-slate-100 transition">
+            Cancel
+          </button>
+          <button type="submit" class="px-5 py-2 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-700 hover:from-emerald-700 hover:to-teal-800 text-white font-black text-xs uppercase tracking-wider transition shadow-md flex items-center gap-1.5 active:scale-95">
+            <span>🎉</span> Confirm &amp; Claim Slot
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Confirmation Banner Floating Notification (Dynamic) -->
+  <div id="claim-success-toast" class="fixed bottom-6 right-6 z-50 hidden max-w-sm w-full bg-white border-2 border-emerald-600 rounded-2xl p-4 shadow-2xl space-y-2">
+    <div class="flex items-center justify-between">
+      <span class="px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-950 text-[11px] font-black border border-emerald-400">
+        ✅ Slot Claimed!
+      </span>
+      <button onclick="document.getElementById('claim-success-toast').classList.add('hidden')" type="button" class="text-slate-400 hover:text-slate-700 text-sm font-bold">&times;</button>
+    </div>
+    <p class="text-xs text-slate-900 font-bold" id="claim-success-message">
+      You are confirmed! Tap below to notify Sister Ackerman &amp; Sister Blue on WhatsApp.
+    </p>
+    <a id="claim-whatsapp-btn" href="#" target="_blank" class="block text-center py-2 px-3 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-black shadow transition flex items-center justify-center gap-1.5">
+      <span>📲</span> Confirm via WhatsApp Family Chat &rarr;
+    </a>
+  </div>
+
 </body>
 </html>
